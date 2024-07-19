@@ -1,13 +1,279 @@
 body {
   margin: 0;
+  padding: 0;
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue'  ,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+@font-face {
+  font-family: myfont;
+  src: url(/Users/sciuto/marmellate-ecommerce/public/font/bavex-font/Bavex-jEwzl.ttf);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Reset some basic elements */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Apply a base style to the body */
+body {
+  background-color: #ffffff;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+
+/* Header styling */
+header {
+  background-color: #ff847c;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+/* nav ul li a:hover {
+  color: #333;
+} */
+
+/* General container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+}
+
+/* Product item styling */
+.product-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+ 
+
+}
+
+.product-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.product-image {
+  height: auto;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+
+.product-item h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.product-item p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.product-item a {
+  display: inline-block;
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.product-item a:hover {
+  background-color: #ff4b3a;
+}
+
+/* Product page styling */
+.product-page {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  max-width: 30%;
+  position: relative;
+  left: 33%;
+}
+
+.product-page .product-image{
+  width: 100%;
+}
+
+
+.product-page h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.product-page p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.product-page button {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-page button:hover {
+  background-color: #ff4b3a;
+}
+
+/* Footer styling */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Cart page styling */
+.cart-page {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.cart-page h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.cart-page ul {
+  margin-bottom: 20px;
+}
+
+.cart-page li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-page button {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-page button:hover {
+  background-color: #ff4b3a;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav ul {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .product-item {
+      /* margin-bottom: 20px; */
+  }
+}
+.logo-nobg{
+width: 20%;
+}
+
+.product-list{
+  display: grid;
+  grid-template-columns: 33,33% 33,33% 33,33% ;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-areas: 
+  "header1 header2 header3 "
+  "section1 section2 section3 "
+  "article1 article2 article3 "
+  "footer2 footer2 footer3 ";
+  gap: 5%;
+}
+.home-page{
+height: fit-content;
+}
+h2{
+  text-align: center;
+  padding: 5% 0;
+  font-size: 30px;
+  font-family: "myfont";
+  font-weight: bold;
+letter-spacing:6px;
+text-transform: uppercase;
+color: #ff847c;
+}
+
+.pag{
+  padding-bottom: 30%;
+}
+
+
+.details-link{
+  text-decoration: none;
+  color: #333;
+}
+.cart-image{
+  width: 40%;
 }
